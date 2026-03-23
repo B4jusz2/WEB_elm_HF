@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript CRUD example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1><center>JavaScript CRUD example</center></h1>
+<hr>
+<div class="employee-form">
+// preventDefault(): kikapcsolja az űrlapnál a gombra való kattintáshoz rendelt alapeseménykezelőt.
+// megakadályozza az oldal újratöltését
+// A gombra kattintáskor lefuttatja a JS onFormSubmit() függvényt:
+<form onsubmit="event.preventDefault();onFormSubmit();">
+<div>
+// Validációs hiba esetén jeleníti meg a This field is required hibaüzenetet
+// Alapesetben a következő el van rejtve: <label class="validation-error hide"…
+// lásd: script.js: validate() metódus
+<label>Full Name*</label><label class="validation-error hide"
+id="fullNameValidationError">This field is required.</label>
+<input type="text" name="fullName" id="fullName">
+</div>
+<div>
+<label>Email Id</label>
+<input type="text" name="email" id="email">
+</div>
+<div>
+<label>Salary</label>
+<input type="text" name="salary" id="salary">
+</div>
+<div>
+<label>City</label>
+<input type="text" name="city" id="city">
+</div>
+<div class="form-action-buttons">
+<input type="submit" value="Submit">
+</div>
+</form>
+</div>
+<br/>
+// Elkészíti a tábla szerkezetét:
+<div class = "employees-table">
+<table class="list" id="employeeList">
+<thead>
+<tr>
+<th>Full Name</th>
+<th>Email Id</th>
+<th>Salary</th>
+<th>City</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<script src="scriptproba.js"></script>
+</body>
+</html>

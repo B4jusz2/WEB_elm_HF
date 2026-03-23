@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nyeremények</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1><center>Nyeremények</center></h1>
+        <hr>
+        <div class="nyeremeny-form"> 
+            <form onsubmit="event.preventDefault();onFormSubmit();"> 
+                <div> 
+                <label>ID*</label>
+<label class="validation-error hide" id="idValidationError">This field is required.</label>
+<input type="text" name="id" id="id">
+            </div>
+                 <div> 
+                    <label>Húzás Id</label> 
+                    <input type="text" name="huzasid" id="huzasid"> 
+                </div> 
+                <div> 
+                    <label>Találat</label> 
+                    <input type="text" name="talalat" id="talalat"> 
+                </div> 
+                <div> 
+                    <label>Darab</label> 
+                    <input type="text" name="darab" id="darab"> 
+                </div> 
+                <div>
+                    <label>Érték</label>
+                    <input type="text" name="ertek" id="ertek">
+                </div>
+                <div class="form-action-buttons"> 
+                    <input type="submit" value="Submit"> 
+                </div> 
+            </form> 
+        </div> 
+        <br/>
+        <div class = "nyeremeny-table"> 
+            <table class="list" id="nyeremenyList"> 
+                <thead> 
+                    <tr> 
+                        <th>ID</th> 
+                        <th>Húzás Id</th> 
+                        <th>Találat</th> 
+                        <th>Darab</th> 
+                        <th>Érték</th> 
+                        <th>Műveletek</th>
+                    </tr> 
+                </thead> 
+                <tbody> 
+
+                </tbody> 
+            </table> 
+        </div> 
+        <script src="script.js"></script> 
+    </body> 
+    </html>
