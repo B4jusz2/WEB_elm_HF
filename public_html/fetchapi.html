@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+ <meta charset="UTF-8">
+ <title>Fetch API CRUD</title>
+ <a href="index.html">Vissza</a>
+</head>
+<body>
+ <div>
+ <h2>Fetch API - CRUD Application</h2>
+
+ <p id="message"></p>
+
+ <h3 id="addedit">Új nyeremény hozzáadása</h3>
+
+ <form id="nyeremenyForm">
+
+ <input type="hidden" id="id">
+ <div>
+ <div>
+ <input type="number" id="huzasid" placeholder="Huzas ID" required>
+ </div>
+ <div>
+ <input type="number" id="talalat" placeholder="Talalat" required>
+ </div>
+ <div>
+ <input type="number" id="darab" placeholder="Darab" required>
+ </div>
+ <div>
+ <input type="number" id="ertek" placeholder="Érték" required>
+ </div>
+ <div> <input type = 'submit'>Mentés</div>
+ </div>
+ </form>
+ <table>
+ <thead>
+ <tr>
+ <th>Id</th>
+ <th>Huzas ID</th>
+ <th>Talalat</th>
+ <th>Darab</th>
+ <th>Érték</th>
+ <th width="150">Műveletek</th>
+ </tr>
+ </thead>
+ <tbody id="nyeremenyTable"></tbody>
+ </table>
+ </div>
+ <script src="react_script.js"></script>
+</body>
+</html>

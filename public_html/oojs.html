@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOJS Menü - Nyereménykártya</title>
+<a href="index.html">Vissza</a>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .panel {
+      border: 1px solid black;
+      padding: 15px;
+      width: 520px;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 90px;
+    }
+
+    input {
+      width: 140px;
+      margin-right: 10px;
+    }
+
+    button {
+      margin-right: 5px;
+      margin-top: 5px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>OOJS - Nyereménykártya kezelő</h1>
+
+  <div class="panel">
+    <div class="row">
+      <label for="huzasid">Húzás ID:</label>
+      <input type="number" id="huzasid" value="547">
+
+      <label for="talalat">Találat:</label>
+      <input type="number" id="talalat" value="7">
+    </div>
+
+    <div class="row">
+      <label for="darab">Darab:</label>
+      <input type="number" id="darab" value="1">
+
+      <label for="ertek">Érték:</label>
+      <input type="number" id="ertek" value="10767529">
+    </div>
+
+    <div class="row">
+      <label for="x">X:</label>
+      <input type="number" id="x" value="100">
+
+      <label for="y">Y:</label>
+      <input type="number" id="y" value="250">
+    </div>
+
+    <div class="row">
+      <label for="width">Szélesség:</label>
+      <input type="number" id="width" value="260">
+
+      <label for="height">Magasság:</label>
+      <input type="number" id="height" value="150">
+    </div>
+
+    <div class="row">
+      <button id="btnUpdate">Adatok frissítése</button>
+      <button id="btnPut">Áthelyezés</button>
+      <button id="btnResize">Átméretezés</button>
+      <button id="btnShow">Megjelenítés</button>
+      <button id="btnHide">Elrejtés</button>
+      <button id="btnHighlight">Kiemelés</button>
+      <button id="btnNormal">Normál</button>
+    </div>
+  </div>
+
+  <script src="obj.js"></script>
+  <script src="objsub.js"></script>
+
+  <script>
+    const kartya = new NyeremenyKartya(
+      547,
+      7,
+      1,
+      10767529,
+      100,
+      250,
+      260,
+      150
+    );
+
+    document.getElementById("btnUpdate").addEventListener("click", function () {
+      const huzasid = parseInt(document.getElementById("huzasid").value);
+      const talalat = parseInt(document.getElementById("talalat").value);
+      const darab = parseInt(document.getElementById("darab").value);
+      const ertek = parseInt(document.getElementById("ertek").value);
+
+      kartya.updateData(huzasid, talalat, darab, ertek);
+    });
+
+    document.getElementById("btnPut").addEventListener("click", function () {
+      const x = parseInt(document.getElementById("x").value);
+      const y = parseInt(document.getElementById("y").value);
+
+      kartya.putAt(x, y);
+    });
+
+    document.getElementById("btnResize").addEventListener("click", function () {
+      const width = parseInt(document.getElementById("width").value);
+      const height = parseInt(document.getElementById("height").value);
+
+      kartya.resize(width, height);
+    });
+
+    document.getElementById("btnShow").addEventListener("click", function () {
+      kartya.show();
+    });
+
+    document.getElementById("btnHide").addEventListener("click", function () {
+      kartya.hide();
+    });
+
+    document.getElementById("btnHighlight").addEventListener("click", function () {
+      kartya.highlight();
+    });
+
+    document.getElementById("btnNormal").addEventListener("click", function () {
+      kartya.normal();
+    });
+  </script>
+</body>
+</html>
